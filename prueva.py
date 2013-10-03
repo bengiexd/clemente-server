@@ -1,4 +1,0 @@
-Clemente
-========
-
-Proyecto en fedora.
