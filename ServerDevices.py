@@ -34,7 +34,7 @@ class Server(Device):
         
         """ accept the connection of any device """
         
-        while 1:            
+        while 1:
             (sc, addr) = self._socket_server.accept()
             print "connected client: ",addr
             self.iniciar(sc)
