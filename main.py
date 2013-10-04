@@ -12,26 +12,26 @@ def main():
 	_port = None
 	_ip = None
 	_arg={"-h": HELP, "-v":VERSION, "-p":_port, "-ip":_ip}	
-	argumentos = sys.argv	
-	if len(argumentos)>1:
+	arguments = sys.argv	
+	if len(arguments)>1:
 		play = 0
-		for nroArg in range(1,len(argumentos)):			
+		for nroArg in range(1,len(arguments)):			
 			if play:
 				play = 0
 			else:
-				parametro = argumentos[nroArg]
-				if _arg.has_key(parametro):
-					if parametro == "-p":
-						_port = argumentos[nroArg+1]
+				parameter = arguments[nroArg]
+				if _arg.has_key(parameter):
+					if parameter == "-p":
+						_port = arguments[nroArg+1]
 						play =1
-					elif parametro == "-ip":
-						_ip = argumentos[nroArg+1]
+					elif parameter == "-ip":
+						_ip = arguments[nroArg+1]
 						play =1
-					elif parametro == "-h" or parametro == "-v":
-						_arg[parametro]()
+					elif parameter == "-h" or parameter == "-v":
+						_arg[parameter]()
 						exit()
 				else:
-					print "no se reconoce el comando ", parametro
+					print "unknown parameter", parameter
 					exit()				
 	
 	servidor = Server(ip=_ip,port=_port)
