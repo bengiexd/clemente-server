@@ -2,10 +2,8 @@ import time
 import socket
 import H_Dispositivo
 
-"""
-    Clase servidor
-"""
-class Servidor(H_Dispositivo.Dispositivo):
+
+class Server(H_Dispositivo.Device):
     """ 
         servidor 
             ip: localhost
@@ -27,7 +25,7 @@ class Servidor(H_Dispositivo.Dispositivo):
         # escuchar dispositivos
         self.__servidorDispositivos.listen(self.nroMaxDispositivos)
         # iniciar Server
-        print "Servidor iniciado"
+        print "Server iniciado"
         self.aceptar_Dispositivos()
 
     def aceptar_Dispositivos(self):
@@ -51,7 +49,7 @@ class Servidor(H_Dispositivo.Dispositivo):
 if __name__ == "__main__":
     s = None
     try:
-        s = Servidor()
+        s = Server()
     finally:
         if s is not None:
             s.cerrar_Servidor()

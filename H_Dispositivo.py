@@ -1,15 +1,11 @@
-"""
-    Hilo para manejar un dispositivo conectado al servidor
-"""
 
 import threading
 import analizador
 
-"""
-    Hilo que maneja a un dispositivo conectado
-"""
-class Dispositivo(threading.Thread):
-
+class Device(threading.Thread):
+    """
+        thread that handles a device connected
+    """
     socket = None
     analizado = analizador.Analizador()
 
