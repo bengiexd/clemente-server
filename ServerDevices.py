@@ -28,9 +28,9 @@ class Server(Device):
         self._socket_server.listen(self._nro_max_devices)
         print "server initiated"
         # accept devices
-        self.accepting_devices()
+        self._accept_devices()
 
-    def accepting_devices(self):
+    def _accept_devices(self):
         
         """ accept the connection of any device """
         
@@ -41,7 +41,7 @@ class Server(Device):
             self.start()
 
 
-    def cerrar_Servidor(self):
+    def shut_down_server(self):
     	
     	""" shut down the server """
     	
