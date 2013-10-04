@@ -27,7 +27,9 @@ def main():
 					elif parametro == "-ip":
 						_ip = argumentos[nroArg+1]
 						play =1
-					#arg[parametro]()
+					elif parametro == "-h" or parametro == "-v":
+						_arg[parametro]()
+						exit()
 				else:
 					print "no se reconoce el comando ", parametro
 					exit()				
