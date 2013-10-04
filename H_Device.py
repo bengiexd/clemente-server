@@ -3,9 +3,11 @@ import threading
 import analizador
 
 class Device(threading.Thread):
+    
     """
         thread that handles a device connected
     """
+    
     socket = None
     analizado = analizador.Analizador()
 
@@ -13,13 +15,13 @@ class Device(threading.Thread):
         self.analizado.iniciar_icaro()
         pass
 
-    """
-        Autenticar al cliente
-    """
+    
     def iniciar(self,socket):
-        # iniciar el hilo
+        
+        """ starting the thread """
+        
         threading.Thread.__init__(self)
-        # inicializar atributos
+        # initialize attributes
         self.socket = socket
         self.activo = True
 

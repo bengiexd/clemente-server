@@ -1,6 +1,6 @@
 import sys
 
-import ServerDispositivos
+from ServerDevices import Server
 		
 def HELP():
 	print "help"
@@ -30,13 +30,13 @@ def main():
 				print "no se reconoce el comando ", dat
 				exit()
 	if _puerto is not None and ip is not None:
-		servidor = ServerDispositivos.Server(ip=ip,_puerto=_puerto)
+		servidor = Server(ip=ip,_puerto=_puerto)
 	elif ip is not None:
-		servidor = ServerDispositivos.Server(ip=ip)
+		servidor = Server(ip=ip)
 	elif _puerto is not None:
-		servidor = ServerDispositivos.Server(_puerto=_puerto)
+		servidor = Server(_puerto=_puerto)
 	else:
-		servidor = ServerDispositivos.Server()
+		servidor = Server()
 	return 0
 
 if __name__ == '__main__':
