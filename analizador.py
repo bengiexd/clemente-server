@@ -3,10 +3,11 @@ import apicaro
 import time
 
 class Analizador():
-    direcciones = {'ADELANTE':"Adelante",'ATRAS':"Atras",'IZQUIERDA':'Izquierda','DERECHA':"Derecha"}        
+    direcciones = {'ADELANTE':"Adelante",'ATRAS':"Atras",
+                   'IZQUIERDA':'Izquierda','DERECHA':"Derecha"}        
 
     def analizarSintaxis(self,pkt_texto):
-        """ 
+        """
             Funcion que analiza si un texto es valido
         """                
         print len(pkt_texto)
@@ -84,9 +85,6 @@ class Analizador():
     def Atras(self):
         print 'valor: Atras'
 
-
-#a = Analizador().resolver("ADELANTE")
-#print a
 
 
 

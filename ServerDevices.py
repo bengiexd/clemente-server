@@ -20,9 +20,13 @@ class Server(Device):
     def __init__(self, ip=_ip, port=_port):        
     	
     	"""	start the server """
-    	
-        self._ip = ip
-        self._port = port
+                
+    	if ip:
+            self._ip = ip
+        if port:
+            self._port = int(port)
+        print "ip: ",self._ip
+        print "port: ",self._port
         self._socket_server = socket.socket()
         self._socket_server.bind((self._ip,self._port))        
         self._socket_server.listen(self._nro_max_devices)
