@@ -17,6 +17,7 @@ class Server(Device):
     _port = 9000
     _nro_max_devices = 100
 
+
     def __init__(self, ip=_ip, port=_port):        
     	
     	"""	start the server """
