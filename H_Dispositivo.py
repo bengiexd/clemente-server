@@ -1,4 +1,7 @@
-#import Servicios
+"""
+    Hilo para manejar un dispositivo conectado al servidor
+"""
+
 import threading
 import analizador
 
