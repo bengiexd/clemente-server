@@ -38,14 +38,14 @@ class Analizador():
             auxValors = re.findall("[0-9]+",pkt_texto)
             funcion = auxMetodo[0][:-1]
             valors = auxValors
-            return {'func':funcion,'valors':auxValors}        
+            return {'func':funcion,'valors':auxValors}
         else:
             return None
 
     def resolver(self,pkt_rec):
         """
             Funcion que resuelve una peticion
-        """          
+        """
         pkt_dec = self.decodificar(pkt_rec)
         print "pkt decodificado: ",pkt_dec
         if pkt_dec is None:
@@ -64,23 +64,22 @@ class Analizador():
     def iniciar_icaro(self):
         self.icaro = apicaro.puerto()
         if self.icaro.iniciar():
-            print "icaro iniciado"
-            self.icaro.activar_servo(1,200)
+            print "icaro iniciado"            
         else:
             print "no se puede iniciar icaro"        
         #time.sleep(2)
         #icaro.cerrar()
+        
+    def stop_icaro(self):
+        
+        """ parar icaro """
+        
+        self.icaro.cerrar()
 
     def Adelante(self):
-        print 'Adelante'
-        icaro = apicaro.puerto()
-        if icaro.iniciar():
-            print "icaro iniciado"
-            icaro.activar_servo(1,200)
-        else:
-            print "no se puede iniciar icaro"        
-        time.sleep(2)
-        icaro.cerrar()
+        print 'Adelante'        
+        icaro.activar_servo(1,200)            
+        time.sleep(2)        
 
     def Atras(self):
         print 'valor: Atras'

@@ -2,17 +2,16 @@
 import threading
 import analizador
 
-class Device(threading.Thread):
+class Device(threading.Thread, analizador.Analizador):
     
     """
         thread that handles a device connected
     """
     
-    socket = None
-    analizado = analizador.Analizador()
+    socket = None    
 
     def __init__(self):
-        self.analizado.iniciar_icaro()
+        self.iniciar_icaro()
         pass
 
     
@@ -28,9 +27,10 @@ class Device(threading.Thread):
     def atender(self):
         # recibir paquete
         pkt_rec = self.socket.recv(1024)
+        
         if pkt_rec:
             print "pkt recivido:"+str(pkt_rec)
-            if analizado.resolver(pkt_rec):
+            if self.resolver(pkt_rec):
                 print "ok enviado"
                 self.socket.send("OK")
             else:
@@ -41,7 +41,7 @@ class Device(threading.Thread):
             return False
 
     # metodo que se ejecuta en el start del hilo
-    def run(self):        
+    def run(self):
         while self.activo:
             if not self.atender():
                 break
